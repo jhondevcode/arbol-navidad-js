@@ -1,5 +1,8 @@
 # Configuraciones de visual studio code
 .vscode
 
-# modulos de node
+# Modulos de node
 node_modules
+
+# Directorio de salida
+out

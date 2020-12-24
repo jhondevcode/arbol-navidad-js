@@ -4,7 +4,8 @@
   "description": "Arbol de navidad hecho en javascript",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node ./src/index.js"
+    "build": "npx tsc",
+    "start": "node ./out/index.js"
   },
   "keywords": [],
   "author": "jhon fernandez",

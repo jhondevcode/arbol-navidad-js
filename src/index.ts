@@ -1,6 +1,6 @@
-let chalk = require('chalk');
+import chalk from 'chalk';
 
-function mult(symbol, length) {
+function mult(symbol: string, length: number) {
     let string = '';
     while (string.length < length) {
         string += symbol;
@@ -8,7 +8,7 @@ function mult(symbol, length) {
     return string;
 }
 
-function center(message, messageLength, size) {
+function center(message: string, messageLength: number, size: number) {
     if (messageLength < size) {
         let point = (size - messageLength) / 2;
         console.log(mult(' ', point) + message)
@@ -19,7 +19,9 @@ function center(message, messageLength, size) {
 
 let espacios = 15;
 let hoja = '0';
+
 console.log(chalk.yellow.bold(mult(' ', espacios) + "X"));
+
 for (let index = 0; index <= espacios; index++) {
     console.log(mult(' ', espacios - index) + chalk.green.bold(hoja));
     hoja += '10';
