@@ -1,19 +1,35 @@
 let chalk = require('chalk');
 
-console.log(chalk.yellow.bold("     X"));
+function mult(symbol, length) {
+    let string = '';
+    while (string.length < length) {
+        string += symbol;
+    }
+    return string;
+}
 
-let numero_espacios = 5;
-let espacios = '     ';
+function center(message, messageLength, size) {
+    if (messageLength < size) {
+        let point = (size - messageLength) / 2;
+        console.log(mult(' ', point) + message)
+    } else {
+        console.log(message);
+    }
+}
+
+let espacios = 15;
 let hoja = '0';
-for (let index = 0; index <= numero_espacios; index++) {
-    console.log(espacios + chalk.green.bold(hoja));
-    espacios = espacios.substring(0, espacios.length - 1);
-    hoja += '00';
+console.log(chalk.yellow.bold(mult(' ', espacios) + "X"));
+for (let index = 0; index <= espacios; index++) {
+    console.log(mult(' ', espacios - index) + chalk.green.bold(hoja));
+    hoja += '10';
 }
 
-for (let tronco = 0; tronco <= 3; tronco++) {
-    console.log(chalk.hex('#996633')('    101'));
+for (let tronco = 0; tronco < espacios / 2; tronco++) {
+    console.log(chalk.hex('#996633')(mult(' ', espacios - 1) + '101'));
 }
 
-console.log(chalk.hex('#00ff00')('🎄 ¡Feliz navidad! 🎄'));
-console.log(chalk.yellow('🎁 Y un prospero año nuevo 🎁'));
+let message = '🎄 ¡Feliz navidad! 🎄';
+center(chalk.hex('#00ff00')(message), message.length, hoja.length);
+message = '🎁 Y un prospero año nuevo 🎁';
+center(chalk.yellow(message), message.length, hoja.length);
