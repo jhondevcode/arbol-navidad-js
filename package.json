@@ -1,0 +1,12 @@
+{
+  "name": "arbol-navidad-js",
+  "version": "1.0.0",
+  "description": "Arbol de navidad hecho en javascript",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
+  "keywords": [],
+  "author": "jhon fernandez",
+  "license": "ISC"
+}
